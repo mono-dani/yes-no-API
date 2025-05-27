@@ -1,0 +1,16 @@
+{
+  "name": "api-consume",
+  "version": "1.0.0",
+  "type": "module" ,
+  "main": "yes_no.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}

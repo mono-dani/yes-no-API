@@ -1,0 +1,19 @@
+// function getYesNoFetch() { };
+const getYesNoFetch = async () => {
+    const url = "https://yesno.wtf/api";
+    const response = await fetch(url);
+
+    if (!response) {
+        throw new Error("Error al consultar el servidor");
+    }
+
+    const data = await response.json();
+    return {
+        answer: data.answer,
+        forced: data.forced,
+    };
+};
+
+getYesNoFetch().then((response) => {
+    console.log(response);
+});

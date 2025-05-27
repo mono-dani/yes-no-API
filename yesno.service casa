@@ -1,0 +1,25 @@
+import { getYesnoFetch } from "./yes_no.service.js";
+import prompSync from "prompt-sync";
+
+const execution = async () => {
+    const prompt = prompSync();
+    let input = "";
+
+     while (input.toLowerCase() !== "exit") {
+        input = prompt("Haz una pregunta (o escribe 'exit' para salir): ");
+
+        if (input.toLowerCase() === "exit") {
+            console.log("¡Hasta luego!");
+            break;
+        }
+
+        try {
+            const response = await getYesnoFetch();
+            console.log(`Respuesta: ${response.answer.toUpperCase()}`);
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+};
+
+execution();
